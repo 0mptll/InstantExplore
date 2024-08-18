@@ -5,6 +5,7 @@ import MainContent from '../MainContent';
 import Footer from '../Footer';
 import VideoSection from '../VideoSection';
 
+
 const HomePage = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const HomePage = () => {
       {/* <MainContent /> */}
       <VideoSection />
       <Footer />
+      
     </div>
   );
 };

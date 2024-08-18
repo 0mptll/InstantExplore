@@ -2,18 +2,19 @@
 import React from 'react';
 import './Header.css';
 import logo from './assets/images/logo.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Header = () => {
   return (
     <header className="header">
-      <a href="/" className="header-logo">
+      <Link to="/" className="header-logo">
         <img src={logo} alt="InstantExplore Logo" className="logo-img" />
         InstantExplore
-      </a>
+      </Link>
       <nav className="header-nav">
-        <a href="/">Home</a>
-        <a href="/about">Log-in</a>
-        <a href="/contact">Sign-in</a>
+        <Link to="/">Home</Link>
+        <Link to="/login">Log-in</Link> {/* Link to Log-In page */}
+        <Link to="/signin">Sign-in</Link> {/* Link to Sign-In page */}
       </nav>
       <button className="header-toggle">☰</button>
     </header>
