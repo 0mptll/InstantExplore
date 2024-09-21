@@ -2,15 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCities, createCity, deleteCity, updateCity, getCity } from '../services/cityServices';
-<<<<<<< HEAD:client/src/components/CityList.jsx
-import Card from './Card';
-import Button from './addButton';
-import CityForm from './CityForm';
-import Header from './Header'; // Import Header component
-import Search from './Search'; // Import Search component
-import './CityList.css';
-import './Modal.css';
-=======
 import Card from '../components/Card';
 import './Styles/CityList.css';
 import Button from '../components/addButton';
@@ -19,7 +10,6 @@ import './Styles/Modal.css';
 import Search from '../components/Search';
 import Header from '../components/Header';
 import {useUser} from '../hooks/userContext';
->>>>>>> main:client/src/Pages/CityList.jsx
 
 const CityList = () => {
   const [cities, setCities] = useState([]);
@@ -29,11 +19,8 @@ const CityList = () => {
   const [formMode, setFormMode] = useState('add');
   const [selectedCity, setSelectedCity] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-<<<<<<< HEAD:client/src/components/CityList.jsx
-=======
   const [isAdmin, setIsAdmin] = useState(false);
   const [formError, setFormError] = useState(null);
->>>>>>> main:client/src/Pages/CityList.jsx
   const navigate = useNavigate();
   const {user} = useUser();
 
@@ -77,11 +64,7 @@ const CityList = () => {
 
   const handleRemoveClick = async (cityId) => {
     try {
-<<<<<<< HEAD:client/src/components/CityList.jsx
-      await deleteCity(cityId);
-=======
       await deleteCity(cityId,user.token);
->>>>>>> main:client/src/Pages/CityList.jsx
       setCities(cities.filter(city => city._id !== cityId));
     } catch (error) {
       console.error('Error removing city:', error);
@@ -102,17 +85,10 @@ const CityList = () => {
   const handleFormSubmit = async (cityData) => {
     try {
       if (formMode === 'add') {
-<<<<<<< HEAD:client/src/components/CityList.jsx
-        const newCity = await createCity(cityData);
-        setCities([...cities, newCity]);
-      } else if (formMode === 'update') {
-        await updateCity(selectedCity._id, cityData);
-=======
         const newCity = await createCity(cityData,user.token);
         setCities([...cities, newCity]);
       } else if (formMode === 'update') {
         await updateCity(selectedCity._id, cityData,user.token);
->>>>>>> main:client/src/Pages/CityList.jsx
         setCities(cities.map(city =>
           city._id === selectedCity._id ? { ...city, ...cityData } : city
         ));
@@ -137,25 +113,6 @@ const CityList = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-<<<<<<< HEAD:client/src/components/CityList.jsx
-    <div className="city-list">
-      <Header /> {/* Render the Header component */}
-      <div className="search-container">
-        <Search onSearch={handleSearch} />
-      </div>
-      {filteredCities.map((city) => (
-        <Card
-          key={city._id}
-          Id={city._id}
-          images={city.images || 'default-image-url.jpg'}
-          title={city.name}
-          description={city.state.name}
-          onExploreClick={handleExploreClick}
-          onUpdateClick={handleUpdateClick}
-          onRemoveClick={handleRemoveClick}
-        />
-      ))}
-=======
     <div className="list">
       <Header />
       <Search onSearch={handleSearch} />
@@ -178,7 +135,6 @@ const CityList = () => {
           <div>No City found.</div>  
         )}
       </div>
->>>>>>> main:client/src/Pages/CityList.jsx
       <div>
         {isAdmin && (
           <Button onClick={handleButtonClick}>
