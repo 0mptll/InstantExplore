@@ -1,4 +1,32 @@
 {
+<<<<<<< HEAD
+  "name": "instantexplore",
+  "version": "1.0.0",
+  "description": "Travel Partner",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "demo"
+  },
+  "author": "mayank meghani",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "nodemon": "^3.1.4"
+=======
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -35,5 +63,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+>>>>>>> 14c06a7ebecd9f4e738bb2b14ff8d7b85b7569ec
   }
 }
